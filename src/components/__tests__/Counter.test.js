@@ -85,6 +85,16 @@ describe("Counter component", () => {
 
   it("shows a warning once we hit the upper limit of the counter", () => {
     // implement
+    const incButton = tools.queryByTestId("incButton");
+
+    rtl.fireEvent.click(incButton);
+    rtl.fireEvent.click(incButton);
+    rtl.fireEvent.click(incButton);
+    rtl.fireEvent.click(incButton);
+    rtl.fireEvent.click(incButton);
+    rtl.fireEvent.click(incButton);
+
+    expect(tools.queryByText(/That's as high/)).toBeInTheDocument();
   });
 
   it("shows a warning once we hit the lower limit of the counter", () => {
