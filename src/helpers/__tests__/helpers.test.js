@@ -49,4 +49,10 @@ describe("personMaker", () => {
   });
 
   // write more tests! <===========================================
+  it("makes a person with name", () => {
+    expect(helpers.personMaker("Sade")).toMatchObject({
+      id: "123",
+      name: "Sade"
+    });
+  });
 });
